@@ -1,31 +1,38 @@
 package br.edu.up;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 import br.edu.up.models.*;
-import br.edu.up.controls.*;
+// import br.edu.up.controls.*;
 
 public class program {
     public static void main(String[] args) {
         
         Scanner leitor = new Scanner(System.in);
-        Ponto ponto = new Ponto();
+        Ponto ponto1 = new Ponto();
         
-        System.out.println("informe o ponto x1");
-        ponto.setX1(leitor.nextDouble());
-
-        System.out.println("informe o ponto y1");
-        ponto.setY1(leitor.nextDouble());
+        System.out.println("informe o primeiro pronto: ");
+        System.out.print("informe o valor X pronto: ");
+        ponto1.setX(leitor.nextDouble());
+        System.out.print("informe o valor Y pronto: ");
+        ponto1.setY(leitor.nextDouble());
+        System.out.println("O ponto criado é: (" + ponto1.getX() + ", " + ponto1.getY() + ")");
         
-        System.out.println("informe o ponto x2");
-        ponto.setX2(leitor.nextDouble());
+        Ponto ponto2 = new Ponto();
+        
+        System.out.println("informe o segundo pronto");
+        System.out.print("informe o valor X pronto: ");
+        ponto2.setX(leitor.nextDouble());
+        System.out.print("informe o valor Y pronto: ");
+        ponto2.setY(leitor.nextDouble());
+        System.out.println("O ponto criado é: (" + ponto2.getX() + ", " + ponto2.getY() + ")");
+        
+        double distancia = ponto1.CalcularDistancia(ponto2);
 
-        System.out.println("informe o ponto y2");
-        ponto.setY2(leitor.nextDouble());
-
-        System.out.println("A soma dos dois pontos são: " + Ponto.distancia(ponto.getX1(), Ponto.getX2, Ponto.getY1, Ponto.getY2));
+        DecimalFormat formato = new DecimalFormat("#.##");
+        System.out.println("A distância entre os pontos é: " + formato.format(distancia));
 
         leitor.close();
     }
 }
-
