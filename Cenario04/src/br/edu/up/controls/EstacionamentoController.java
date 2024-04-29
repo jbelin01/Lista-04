@@ -1,57 +1,50 @@
 package br.edu.up.controls;
 
 import br.edu.up.models.Estacionamento;
-import br.edu.up.models.Veiculo;
+import br.edu.up.models.Carro;
 import br.edu.up.views.*;
 
 
 public class EstacionamentoController {
     public Estacionamento estacionamento;
     public EstacionamentoView view;
+    public Carro veiculo;
 
-    public EstacionamentoController(Estacionamento estacionamento, EstacionamentoView view) {
+    public EstacionamentoController(Estacionamento estacionamento, EstacionamentoView view)  {
         this.estacionamento = estacionamento;
         this.view = view;
+        
     }
 
     public void iniciar() {
         while (true) {
-            view.mostrarMenu();
-            String opcao = view.solicitarOpcao();
-            switch (opcao) {
-                case "1":
-                    entrarVeiculo();
-                    break;
-                case "2":
-                    sairVeiculo();
-                    break;
-                case "3":
-                    System.out.println("Encerrando o programa...");
-                    return;
-                default:
-                    System.out.println("Opção inválida!");
+            int opcao = view.mostrarMenu();
+            if (opcao == 1){
+                estacionamento.entrarVeiculo(veiculo);
+            } else if (opcao == 2) {
+                estacionamento.sairVeiculo(veiculo);
+            } else if (opcao == 3) {
+                estacionamento.Relatorio(veiculo);
+            }else if (opcao == 4){
+                break;
             }
         }
-    }
-
-    public void entrarVeiculo() {
-        String placa = view.solicitarPlaca();
-        Veiculo veiculo = view.solicitarDadosEntrada();
-        if (estacionamento.entrarVeiculo(veiculo, placa)) {
-            System.out.println("Veículo estacionado com sucesso!");
-        } else {
-            System.out.println("Estacionamento lotado!");
-        }
-    }
-
-    public void sairVeiculo() {
-        Veiculo veiculo = view.solicitarDadosEntrada();
-        if (estacionamento.sairVeiculo(veiculo)) {
-            System.out.println("Veículo retirado do estacionamento.");
-        } else {
-            System.out.println("Veículo não encontrado no estacionamento.");
-        }
-    }
-    
+    }   
+    // public void iniciar() {
+    //     while (true) {
+    //         int opcao = view.mostrarMenu();
+    //         if (opcao == 1){
+    //             Carro veiculo = view.getCarroInfo();
+    //             estacionamento.entrarVeiculo(veiculo);
+    //         } else if (opcao == 2) {
+    //             String placa = view.getPlaca();
+    //             estacionamento.sairVeiculo(placa);
+    //         } else if (opcao == 3) {
+    //             estacionamento.Relatorio();
+    //         }else if (opcao == 4){
+    //             break;
+    //         }
+    //     }
+    // }
 }
 
