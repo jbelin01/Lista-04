@@ -8,6 +8,7 @@ public class Program {
     public static void main(String[] args) {
         Estacionamento estacionamento = new Estacionamento();
         EstacionamentoView view = new EstacionamentoView();
+
         EstacionamentoController controller = new EstacionamentoController(estacionamento, view);
         controller.iniciar();
     }
