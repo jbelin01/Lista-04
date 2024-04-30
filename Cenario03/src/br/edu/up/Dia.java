@@ -41,14 +41,31 @@ public class Dia {
         compromissos[hora] = null;
     }
 
-    public Compromisso[] listarCompromissos(){
-        return compromissos;
-    }
-
     public Compromisso consultarCompromisso(int hora){
 
         return compromissos[hora];
 
+    }
+
+    public String listarCompromissos(int hora){
+        
+
+        String retorno = "";
+
+       for (int i = 0; i < compromissos.length; i++) {
+
+        Compromisso c = compromissos[i];
+            
+         if(c.getHora() == hora ){
+               retorno += hora + "" + c.getAssunto() + "\n";
+            }
+            else{
+                retorno +=  hora + " Não tem compromisso! \n";
+            }
+        }
+        
+        return retorno;
+        
     }
 
 
