@@ -1,8 +1,6 @@
 package br.edu.up.views;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import br.edu.up.models.Carro;
 
 public class Estacionamento {

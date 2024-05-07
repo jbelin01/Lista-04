@@ -16,14 +16,15 @@ public class EstacionamentoView {
     }
 
     public Carro getCarroInfo() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner leitor = new Scanner(System.in);
         System.out.print("Digite o modelo do carro: ");
-        String modelo = scanner.nextLine();
+        String modelo = leitor.nextLine();
         System.out.print("Digite a placa do carro: ");
-        String placa = scanner.nextLine();
+        String placa = leitor.nextLine();
         System.out.print("Digite a cor do carro: ");
-        String cor = scanner.nextLine();
+        String cor = leitor.nextLine();
         return new Carro(modelo, placa, cor);
+       
     }
 
     public String getPlaca() {
@@ -31,5 +32,5 @@ public class EstacionamentoView {
         System.out.print("Digite a placa do carro: ");
         return leitor.nextLine();
     }
-
+    
 }
