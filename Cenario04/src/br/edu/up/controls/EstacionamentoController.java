@@ -1,35 +1,91 @@
 package br.edu.up.controls;
 
-import br.edu.up.models.Estacionamento;
-import br.edu.up.models.Carro;
-import br.edu.up.views.*;
 
 
-public class EstacionamentoController {
-    public Estacionamento estacionamento;
-    public EstacionamentoView view;
-    public Carro veiculo;
 
-    public EstacionamentoController(Estacionamento estacionamento, EstacionamentoView view)  {
-        this.estacionamento = estacionamento;
-        this.view = view;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import java.util.Scanner;
+
+// import br.edu.up.models.Carro;
+// import br.edu.up.views.*;
+
+// public class EstacionamentoController {
+//     public Estacionamento estacionamento;
+//     public EstacionamentoView view;
+//     public Carro veiculo;
+
+//     public EstacionamentoController(Estacionamento estacionamento, EstacionamentoView view, Carro veiculo)  {
+//         this.estacionamento = estacionamento;
+//         this.view = view;
+//         this.veiculo = veiculo;
         
-    }
+//     }
 
-    public void iniciar() {
-        while (true) {
-            int opcao = view.mostrarMenu();
-            if (opcao == 1){
-                estacionamento.entrarVeiculo(veiculo);
-            } else if (opcao == 2) {
-                estacionamento.sairVeiculo(veiculo);
-            } else if (opcao == 3) {
-                estacionamento.Relatorio(veiculo);
-            }else if (opcao == 4){
-                break;
-            }
-        }
-    }   
+    
+   
+   
+//     public void iniciar() {
+        
+//             int opcao = view.mostrarMenu();
+//             if (opcao == 1){
+//                 estacionamento.entrarVeiculo(veiculo);
+//             } else if (opcao == 2) {
+//                 estacionamento.sairVeiculo();
+//             } else if (opcao == 3) {
+//                 estacionamento.Relatorio(veiculo);
+//             }else if (opcao == 4){
+                
+//             }
+        
+//     }   
     // public void iniciar() {
     //     while (true) {
     //         int opcao = view.mostrarMenu();
@@ -46,5 +102,5 @@ public class EstacionamentoController {
     //         }
     //     }
     // }
-}
+// }
 
