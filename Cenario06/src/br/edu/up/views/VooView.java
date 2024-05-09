@@ -5,8 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import br.edu.up.models.Aeronave;
 import br.edu.up.models.Passageiro;
 import br.edu.up.models.Passagem;
+import br.edu.up.models.Pessoa;
 import br.edu.up.models.Tripulacao;
 
 public class VooView {
@@ -39,7 +41,7 @@ public class VooView {
         System.out.print("Digite a data do voo (dd/MM/yyyy HH:mm): ");
         String dataVooStr = leitor.nextLine();
 
-        // Em Java, a classe SimpleDateFormat é usada para formatar e analisar datas em texto. O método parse(String) é usado para analisar texto de uma string para produzir um Date.
+        // Em Java, a classe "SimpleDateFormat" é usada para formatar e analisar datas em texto. O método "parse(String)" é usado para analisar texto de uma string para produzir um Date.
 
         Date dataVoo = null;
         try{
@@ -72,5 +74,24 @@ public class VooView {
 
         return tripulacao;
     }
+    
+
+    public static Aeronave getAcentos(){
+        Scanner leitor = new Scanner(System.in);
+
+        System.out.println("Digite o código da aeronave: ");
+        String codigo = leitor.nextLine();
+        
+        System.out.println("Digite o tipo da aeronave: ");
+        String tipo = leitor.nextLine();
+
+        System.out.println("Digite a quantidade de acentos: ");
+        int quantidadeAssentos = leitor.nextInt();
+
+        Aeronave aeronave = new Aeronave(codigo, tipo, quantidadeAssentos);
+
+        return aeronave;
+    }
+
     
 }

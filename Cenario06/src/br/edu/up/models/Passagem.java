@@ -2,7 +2,7 @@ package br.edu.up.models;
 
 import java.util.Date;
 
-public class Passagem {
+public class Passagem{
     public String numAcento;
     public String classe;
     public Date dataVoo;  
@@ -39,4 +39,6 @@ public class Passagem {
     public void setDataVoo(Date dataVoo) {
         this.dataVoo = dataVoo;
     }
+
+    
 }
