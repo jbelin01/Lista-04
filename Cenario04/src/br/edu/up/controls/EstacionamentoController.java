@@ -40,8 +40,8 @@ public class EstacionamentoController {
                     break;
                 case "5":
                     System.out.println("Saindo do sistema...");
-                    scanner.close();
-                    return;
+                        scanner.close();
+                        return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }

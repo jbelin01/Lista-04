@@ -7,10 +7,12 @@ public class Tripulacao extends Pessoa{
     public Tripulacao() {
     }
 
-    public Tripulacao(String identificadorAeronautica, String matricula) {
+    public Tripulacao(String nome, String rg, String identificadorAeronautica, String matricula) {
+        super(nome, rg);
         this.identificadorAeronautica = identificadorAeronautica;
         this.matricula = matricula;
     }
+
 
     public String getIdentificadorAeronautica() {
         return this.identificadorAeronautica;

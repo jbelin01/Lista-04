@@ -70,7 +70,8 @@ public class VooView {
         System.out.print("Digite a matricula: ");
         String matricula = leitor.nextLine();
 
-        Tripulacao tripulacao = new Tripulacao(identificadorAeronautica, matricula);
+
+        Tripulacao tripulacao = new Tripulacao(nome, rg, identificadorAeronautica, matricula);
 
         return tripulacao;
     }
