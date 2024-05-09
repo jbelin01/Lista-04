@@ -1,5 +1,25 @@
+import br.edu.up.controls.AeroController;
+import br.edu.up.views.Voo;
+import br.edu.up.views.VooView;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Voo voo = new Voo();
+        VooView views = new VooView();
+        AeroController controller = new AeroController(views, voo);
+
+        controller.iniciar();
     }
 }
+
+// Um aeroporto precisa-se registrar informações sobre as diferentes pessoas que nele trafegam.
+// Todas as pessoas possuem nome e rg. As pessoas se dividem entre passageiros e tripulação. Os
+// passageiros possuem um identificador de bagagem e a sua passagem. Sobre a passagem, armazena-se
+// o número do acento, a classe do acento e a data do voo, contendo dia, mês, ano, hora e minuto de
+// partida. Sobre a tripulação, sabe-se a sua identificação aeronáutica e matrícula do funcionário. Dos
+// comandantes, registra-se o seu total de horas de voo e dos comissários os idiomas em que possuem
+// fluência. Todas as pessoas possuem ainda informações sobre a aeronave em que farão o voo. Sobre
+// ela, armazena-se o seu código, tipo e quantidade de assentos. O sistema deve ser desenvolvido no
+// padrão arquitetural Model-View-Controller (MVC), possuir uma classe Programa que inicia a execução
+// do software e um menu que permita ao usuário realizar as operações necessários para o controle do
+// tráfego.
