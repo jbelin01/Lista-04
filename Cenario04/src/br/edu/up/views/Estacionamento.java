@@ -50,10 +50,18 @@ public class Estacionamento {
         System.out.println("Vagas disponíveis: " + vagasDisponiveis);
     }
 
-    public void relatorio(){
-        System.out.println("Carros no estacionamento: ");
+    public void relatorio(String periodo){
+        int totalCarrosPeriodo = 0;
+        double valorArrecadadoPeriodo = 0.0;
+        System.out.println("Carros no estacionamento no período da " + periodo);
         for(Carro carro : this.carros){
-            System.out.println("Modelo: " + carro.getModelo()+ ", Placa: " + carro.getPlaca() + ", Cor: " + carro.getCor());
+            if(carro.getPeriodo().equals(periodo)){
+                System.out.println("Modelo: " + carro.getModelo()+ ", Placa: " + carro.getPlaca() + ", Cor: " + carro.getCor());
+                totalCarrosPeriodo++;
+                valorArrecadadoPeriodo += this.valorPeriodo;
+                System.out.println("Total de carros estacionados no período " + periodo + ": " + totalCarrosPeriodo);
+                System.out.println("Valor total arrecadado no período " + periodo + ": " + valorArrecadadoPeriodo);
+            }
         }
         System.out.println("Total de carros estacionados: " + this.carros.size());
         System.out.println("Valor total arrecadado: " + this.carros.size() * this.valorPeriodo);

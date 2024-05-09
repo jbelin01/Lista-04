@@ -22,8 +22,10 @@ public class EstacionamentoView {
         System.out.print("Digite a placa do carro: ");
         String placa = leitor.nextLine();
         System.out.print("Digite a cor do carro: ");
-        String cor = leitor.nextLine();
-        return new Carro(modelo, placa, cor);
+        String cor = leitor.nextLine(); 
+        System.out.println("Escolha o período (manha, tarde, noite): ");
+        String periodo = leitor.nextLine(); 
+        return new Carro(modelo, placa, cor, periodo);
        
     }
 
@@ -32,5 +34,4 @@ public class EstacionamentoView {
         System.out.print("Digite a placa do carro: ");
         return leitor.nextLine();
     }
-    
 }

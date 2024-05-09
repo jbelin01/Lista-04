@@ -34,7 +34,9 @@ public class EstacionamentoController {
                     views.vagas();
                     break;
                 case "4":
-                    views.relatorio();
+                    System.out.print("Digite o período (manhã, tarde, noite): ");
+                    String periodo = scanner.nextLine();
+                    views.relatorio(periodo);
                     break;
                 case "5":
                     System.out.println("Saindo do sistema...");
