@@ -1,50 +1,50 @@
 package br.edu.up.controls;
 
-import br.edu.up.models.Estacionamento;
-import br.edu.up.models.Carro;
+
+import java.util.Scanner;
+import br.edu.up.models.*;
 import br.edu.up.views.*;
 
-
 public class EstacionamentoController {
-    public Estacionamento estacionamento;
-    public EstacionamentoView view;
-    public Carro veiculo;
 
-    public EstacionamentoController(Estacionamento estacionamento, EstacionamentoView view)  {
-        this.estacionamento = estacionamento;
+    public Estacionamento views;
+    public EstacionamentoView view;
+
+
+    public EstacionamentoController(Estacionamento views, EstacionamentoView view) {
+        this.views = views;
         this.view = view;
-        
     }
 
     public void iniciar() {
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            int opcao = view.mostrarMenu();
-            if (opcao == 1){
-                estacionamento.entrarVeiculo(veiculo);
-            } else if (opcao == 2) {
-                estacionamento.sairVeiculo(veiculo);
-            } else if (opcao == 3) {
-                estacionamento.Relatorio(veiculo);
-            }else if (opcao == 4){
-                break;
+            view.mostrarMenu();
+            String opcao = scanner.nextLine();
+            switch (opcao) {
+                case "1":
+                    Carro carro = view.getCarroInfo();
+                    views.entrarVeiculo(carro);
+                    break;
+                case "2":
+                    String placa = view.getPlaca();
+                    views.sairVeiculo(placa);
+                    break;
+                case "3":
+                    views.vagas();
+                    break;
+                case "4":
+                    System.out.print("Digite o período (manha, tarde, noite): ");
+                    String periodo = scanner.nextLine();
+                    views.relatorio(periodo);
+                    break;
+                case "5":
+                    System.out.println("Saindo do sistema...");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
             }
         }
-    }   
-    // public void iniciar() {
-    //     while (true) {
-    //         int opcao = view.mostrarMenu();
-    //         if (opcao == 1){
-    //             Carro veiculo = view.getCarroInfo();
-    //             estacionamento.entrarVeiculo(veiculo);
-    //         } else if (opcao == 2) {
-    //             String placa = view.getPlaca();
-    //             estacionamento.sairVeiculo(placa);
-    //         } else if (opcao == 3) {
-    //             estacionamento.Relatorio();
-    //         }else if (opcao == 4){
-    //             break;
-    //         }
-    //     }
-    // }
+    }
 }
-
