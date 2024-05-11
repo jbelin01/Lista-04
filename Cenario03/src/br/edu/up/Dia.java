@@ -16,7 +16,6 @@ public class Dia {
     }
     
     
-
     public int getDiaMes() {
         return this.diaMes;
     }
@@ -34,7 +33,7 @@ public class Dia {
     }
 
     public void adicionarCompromisso(Compromisso compromisso){
-        compromissos[compromisso.getHora()] = compromisso;
+        compromissos[compromisso.getHora()] = compromisso;      
     }
 
     public void excluirCompromisso(int hora){
@@ -46,8 +45,7 @@ public class Dia {
         return compromissos[hora];
 
     }
-
-    public String listarCompromissos(int hora){
+public String listarCompromissos(int hora){
         
 
         String retorno = "";
@@ -67,6 +65,11 @@ public class Dia {
         return retorno;
         
     }
+    
+
+
+
+
 
 
     
