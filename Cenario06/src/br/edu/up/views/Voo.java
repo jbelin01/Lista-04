@@ -2,11 +2,8 @@ package br.edu.up.views;
 
 import java.util.ArrayList;
 
-import br.edu.up.models.Aeronave;
-import br.edu.up.models.Passageiro;
-import br.edu.up.models.Passagem;
-import br.edu.up.models.Pessoa;
-import br.edu.up.models.Tripulacao;
+import br.edu.up.models.*;
+
 
 public class Voo {
 

@@ -1,6 +1,7 @@
 package br.edu.up.models;
 
 public class Comandante extends Tripulacao {
+    
     public int totalHoraVoo;
 
     public Comandante() {

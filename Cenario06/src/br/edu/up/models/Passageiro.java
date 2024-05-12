@@ -14,7 +14,7 @@ public class Passageiro extends Pessoa{
         this.identificadorBagagem = identificadorBagagem;
         this.passagem = passagem;
     }
-
+    
     
     public String getIndenficadorBagagem() {
         return this.identificadorBagagem;

@@ -40,6 +40,7 @@ public class Aeronave extends Passagem{
         return this.quantidadeAssentos;
     }
 
+
     public void setQuantidadeAssentos(int quantidadeAssentos) {
         this.quantidadeAssentos = quantidadeAssentos;
     }
