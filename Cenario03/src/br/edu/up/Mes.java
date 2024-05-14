@@ -6,7 +6,7 @@ public class Mes {
 
     private int qtdDias;
 
-    Dia[] dias = new Dia[qtdDias];
+    private Dia[] dias;
 
 
     public String getNome() {
@@ -29,6 +29,7 @@ public class Mes {
     public Mes(String nome, int qtdDias) {
         this.nome = nome;
         this.qtdDias = qtdDias;
+        this.dias = new Dia[qtdDias]; 
     }
 
     public void adicionarDia(Dia dia){
@@ -41,11 +42,12 @@ public class Mes {
     }
 
     public void adicionarCompromisso(Compromisso compromisso, int diaMes) {
+        
         if (diaMes >= 1 && diaMes <= qtdDias) {
+
             dias[diaMes - 1].adicionarCompromisso(compromisso);
-        } else {
-            System.out.println("Erro: Dia do mês inválido.");
-        }
+
+        } 
     }
 
     public void adicionarCompromisso(String pessoa, String local, String assunto, int hora, int diaMes){
@@ -90,20 +92,42 @@ public class Mes {
 
         Dia  d = dias[i];
         
-            
+       
+        
+        for (int j = 0; j < d.getCompromissos().length; j++) {
+
+          
          if(d.getDiaMes() == diaMes ){
-               retorno += diaMes + "" + d.getAssunto() + "\n";
-            }
+               retorno += diaMes + "" + d.getCompromissos()[j].getAssunto() + "\n";
+                           }
             else{
                 retorno +=  diaMes + " Não tem compromisso! \n";
             }
+            
+            
         }
-        return retorno;
+        
     }
-    
-
-    
-
-    
-    
+    return retorno;
 }
+
+public String listarCompromissos(){
+
+    String retorno = "";
+    for (int i = 0; i < dias.length; i++) {
+        Dia  d = dias[i];
+        for (int j = 0; j < d.getCompromissos().length; j++) {
+            retorno += d.getDiaMes() + "" + d.getCompromissos()[j].getAssunto()
+            + "\n";
+        }
+    }
+    return retorno;
+    }
+
+
+
+
+
+}
+    
+
