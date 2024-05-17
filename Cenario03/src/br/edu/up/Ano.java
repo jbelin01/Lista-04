@@ -69,5 +69,16 @@ public class Ano {
         }
         return "Mês não encontrado.";
     }
+
+    public String listarCompromissos(){
+        String retorno = "";
+        for (Mes mes : meses) {
+            if (mes != null) {
+                retorno += mes.listarCompromissos() + "\n";
+                }
+            }
+            return retorno;
+    }
+
     
 }
