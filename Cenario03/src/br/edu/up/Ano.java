@@ -52,5 +52,20 @@ public class Ano {
         }
     }
 
+    public void excluirCompromisso(String nomeMes, int diaMes, int hora){
+        for(Mes mes : meses){
+            if(mes.getNome().equals(nomeMes)){
+                mes.excluirCompromisso(diaMes, hora);
+                }
+            }
+    }
+
+    public String listarCompromissos(String nomeMes){
+        for(Mes mes : meses){
+            if(mes.getNome().equals(nomeMes)){
+                return mes.listarCompromissos();
+                }
+            }
+    }
     
 }
