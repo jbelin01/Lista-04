@@ -42,11 +42,22 @@ public class Ano {
     public void setMeses(Mes[] meses) {
         this.meses = meses;
     }
-
-
+    
     public void adicionarMes(Mes mes){
-
-        
+        for(int i = 0; i < meses.length; i++){
+            if(meses[i] == null){
+                meses[i] = mes;
+                break;
+                }
+        }
     }
+
+   
+
+
+
+    
+
+
     
 }
