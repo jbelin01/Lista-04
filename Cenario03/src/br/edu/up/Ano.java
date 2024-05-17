@@ -15,8 +15,6 @@ public class Ano {
         this.meses = meses;
     }
 
-
-
     public int getAno() {
         return this.ano;
     }
