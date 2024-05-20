@@ -1,7 +1,5 @@
 package br.edu.up;
 
-import java.util.List;
-
 public class Mes {
 
     private String nome;
@@ -94,37 +92,6 @@ public class Mes {
     }
 
 
-<<<<<<< HEAD
-    // public String listarCompromissos(int diaMes){
-        
-
-    //     String retorno = "";
-
-    //    for (int i = 0; i < dias.length; i++) {
-
-    //     Dia  d = dias[i];
-        
-            
-    //      if(d.getDiaMes() == diaMes ){
-    //            retorno += diaMes + "" + c.getAssunto() + "\n";
-    //         }
-    //         else{
-    //             retorno +=  diaMes + " Não tem compromisso! \n";
-    //         }
-    //     }
-    //     return retorno;
-    // }
-    public String listarCompromissos(int diaMes){
-    String retorno = "";
-
-    for (int i = 0; i < dias.length; i++) {
-        Dia d = dias[i];
-
-        if(d.getDiaMes() == diaMes ){
-            List<Compromisso> compromissosDoDia = d.getCompromissos[];
-            for (Compromisso c : compromissosDoDia) {
-                retorno += diaMes + " " + c.getAssunto() + "\n";
-=======
     public String listarCompromissos(int diaMes) {
         String retorno = "";
         Dia dia = dias[diaMes - 1];
@@ -134,20 +101,10 @@ public class Mes {
                 retorno += i + " - " + c.getAssunto() + "\n";
             } else {
                 retorno += i + " - Não tem compromisso\n";
->>>>>>> c9ddd6fd76a0dc4d2bba5be26258ae2611543d2e
             }
         }
-        else{
-            retorno +=  diaMes + " Não tem compromisso! \n";
-        }
+        return retorno;
     }
-<<<<<<< HEAD
-    return retorno;
-}
-
-    
-=======
->>>>>>> c9ddd6fd76a0dc4d2bba5be26258ae2611543d2e
 
     public String listarCompromissos(){
         String retorno = "";
@@ -167,7 +124,7 @@ public class Mes {
 
 
 
-
+// reiniciar git
 
 }
     
