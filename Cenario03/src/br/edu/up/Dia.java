@@ -45,25 +45,17 @@ public class Dia {
         return compromissos[hora];
 
     }
-public String listarCompromissos(int hora){
-        
-
+    public String listarCompromissos(int hora){
         String retorno = "";
-
-       for (int i = 0; i < compromissos.length; i++) {
-
-        Compromisso c = compromissos[i];
-            
-         if(c.getHora() == hora ){
-               retorno += hora + "" + c.getAssunto() + "\n";
-            }
-            else{
-                retorno +=  hora + " Não tem compromisso! \n";
+        for (int i = 0; i < compromissos.length; i++) {
+            Compromisso c = compromissos[i];
+            if (c!= null && c.getHora() == hora) {
+                retorno += hora + " " + c.getAssunto() + "\n";
+            } else {
+                retorno += hora + " Não tem compromisso! \n";
             }
         }
-        
         return retorno;
-        
     }
     
 

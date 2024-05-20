@@ -8,8 +8,16 @@ public class Mes {
 
     private int qtdDias;
 
-    Dia[] dias = new Dia[qtdDias];
-
+    private Dia[] dias;
+    
+    public Mes(String nome, int qtdDias) {
+        this.nome = nome;
+        this.qtdDias = qtdDias;
+        this.dias = new Dia[qtdDias]; 
+        for (int i = 0; i < qtdDias; i++) {
+            dias[i] = new Dia(i + 1); 
+        }
+    }
 
     public String getNome() {
         return this.nome;
@@ -28,10 +36,8 @@ public class Mes {
     }
 
 
-    public Mes(String nome, int qtdDias) {
-        this.nome = nome;
-        this.qtdDias = qtdDias;
-    }
+   
+    
 
     public void adicionarDia(Dia dia){
         for (int i = 0; i < dias.length; i++) {
@@ -43,21 +49,26 @@ public class Mes {
     }
 
     public void adicionarCompromisso(Compromisso compromisso, int diaMes) {
+        
         if (diaMes >= 1 && diaMes <= qtdDias) {
+
             dias[diaMes - 1].adicionarCompromisso(compromisso);
-        } else {
-            System.out.println("Erro: Dia do mês inválido.");
-        }
+
+        } 
     }
+
+   
 
     public void adicionarCompromisso(String pessoa, String local, String assunto, int hora, int diaMes){
 
         for (int i = 0; i < dias.length; i++) {
+            
+            Dia  d = dias[i];
 
             if(dias[i] != null){
-                if(dias[i].getDiaMes() == diaMes){
+                if(d.getDiaMes() == diaMes){
                     Compromisso compromisso = new Compromisso(pessoa, local, assunto, hora);
-                    dias[i].adicionarCompromisso(compromisso);
+                    d.adicionarCompromisso(compromisso);
                 }
             }
             
@@ -83,6 +94,7 @@ public class Mes {
     }
 
 
+<<<<<<< HEAD
     // public String listarCompromissos(int diaMes){
         
 
@@ -112,19 +124,51 @@ public class Mes {
             List<Compromisso> compromissosDoDia = d.getCompromissos[];
             for (Compromisso c : compromissosDoDia) {
                 retorno += diaMes + " " + c.getAssunto() + "\n";
+=======
+    public String listarCompromissos(int diaMes) {
+        String retorno = "";
+        Dia dia = dias[diaMes - 1];
+        for (int i = 0; i < 24; i++) {
+            Compromisso c = dia.getCompromissos()[i];
+            if (c != null) {
+                retorno += i + " - " + c.getAssunto() + "\n";
+            } else {
+                retorno += i + " - Não tem compromisso\n";
+>>>>>>> c9ddd6fd76a0dc4d2bba5be26258ae2611543d2e
             }
         }
         else{
             retorno +=  diaMes + " Não tem compromisso! \n";
         }
     }
+<<<<<<< HEAD
     return retorno;
 }
 
     
+=======
+>>>>>>> c9ddd6fd76a0dc4d2bba5be26258ae2611543d2e
 
-    
+    public String listarCompromissos(){
+        String retorno = "";
+        for (int i = 0; i < dias.length; i++) {
+            Dia d = dias[i];
+            if (d!= null) {
+                for (int j = 0; j < d.getCompromissos().length; j++) {
+                    Compromisso c = d.getCompromissos()[j];
+                    if (c!= null) {
+                        retorno += d.getDiaMes() + " " + c.getAssunto() + "\n";
+                    }
+                }
+            }
+        }
+        return retorno;
+    }
 
-    
-    
+
+
+
+
 }
+    
+
