@@ -2,7 +2,7 @@ package br.edu.up.models;
 
 import java.util.ArrayList;
 
-public class Comissario extends Tripulacao {
+public class Comissario extends Tripulante {
     private String[] idiomas; 
 
     public Comissario() {
@@ -12,7 +12,7 @@ public class Comissario extends Tripulacao {
         this.idiomas = idiomas;
     }
 
-    public String [] getIdioma() {
+    public String[] getIdioma() {
         return this.idiomas;
     }
 

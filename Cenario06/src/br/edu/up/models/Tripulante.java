@@ -1,13 +1,13 @@
 package br.edu.up.models;
 
-public class Tripulacao extends Pessoa{
+public class Tripulante extends Pessoa{
     public String identificadorAeronautica;
-    public String matricula;
+    public String[] matricula;
 
-    public Tripulacao() {
+    public Tripulante() {
     }
 
-    public Tripulacao(String nome, String rg, String identificadorAeronautica, String matricula) {
+    public Tripulante(String nome, String rg, String identificadorAeronautica, String[] matricula) {
         super(nome, rg);
         this.identificadorAeronautica = identificadorAeronautica;
         this.matricula = matricula;
@@ -22,11 +22,11 @@ public class Tripulacao extends Pessoa{
         this.identificadorAeronautica = identificadorAeronautica;
     }
 
-    public String getMatricula() {
+    public String[] getMatricula() {
         return this.matricula;
     }
 
-    public void setMatricula(String matricula) {
+    public void setMatricula(String[] matricula) {
         this.matricula = matricula;
     }
 }

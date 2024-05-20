@@ -5,14 +5,12 @@ import br.edu.up.models.Carro;
 
 public class Estacionamento {
 
-    public ArrayList<Carro> carros;
-    public int vagas;
-    public double valorPeriodo;
+    private Carro[] carros = new Carro[10];
+    private int vagas = 10;
+    private double valorPeriodo = 5.0;
 
-    public Estacionamento(){
-        this.carros = new ArrayList<Carro>();
-        this.vagas = 10;
-        this.valorPeriodo = 5.0;
+    public Estacionamento(Carro[] carro){
+        this.carros = carro;
     }
 
     public void entrarVeiculo(Carro carro){

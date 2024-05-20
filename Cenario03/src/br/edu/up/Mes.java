@@ -1,5 +1,7 @@
 package br.edu.up;
 
+import java.util.List;
+
 public class Mes {
 
     private String nome;
@@ -81,25 +83,44 @@ public class Mes {
     }
 
 
-    public String listarCompromissos(int diaMes){
+    // public String listarCompromissos(int diaMes){
         
 
-        String retorno = "";
+    //     String retorno = "";
 
-       for (int i = 0; i < dias.length; i++) {
+    //    for (int i = 0; i < dias.length; i++) {
 
-        Dia  d = dias[i];
+    //     Dia  d = dias[i];
         
             
-         if(d.getDiaMes() == diaMes ){
-               retorno += diaMes + "" + d.getAssunto() + "\n";
-            }
-            else{
-                retorno +=  diaMes + " Não tem compromisso! \n";
+    //      if(d.getDiaMes() == diaMes ){
+    //            retorno += diaMes + "" + c.getAssunto() + "\n";
+    //         }
+    //         else{
+    //             retorno +=  diaMes + " Não tem compromisso! \n";
+    //         }
+    //     }
+    //     return retorno;
+    // }
+    public String listarCompromissos(int diaMes){
+    String retorno = "";
+
+    for (int i = 0; i < dias.length; i++) {
+        Dia d = dias[i];
+
+        if(d.getDiaMes() == diaMes ){
+            List<Compromisso> compromissosDoDia = d.getCompromissos[];
+            for (Compromisso c : compromissosDoDia) {
+                retorno += diaMes + " " + c.getAssunto() + "\n";
             }
         }
-        return retorno;
+        else{
+            retorno +=  diaMes + " Não tem compromisso! \n";
+        }
     }
+    return retorno;
+}
+
     
 
     

@@ -1,14 +1,11 @@
-import br.edu.up.controls.AeroController;
-import br.edu.up.views.Voo;
-import br.edu.up.views.VooView;
+import br.edu.up.controls.TrafegoController;
+import br.edu.up.views.TelaPrincipalView;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Voo voo = new Voo();
-        VooView views = new VooView();
-        AeroController controller = new AeroController(views, voo);
 
-        controller.iniciar();
+        TelaPrincipalView views = new TelaPrincipalView();
+        views.mostrar();
     }
 }
 

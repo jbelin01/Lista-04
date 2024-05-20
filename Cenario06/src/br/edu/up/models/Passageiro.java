@@ -32,4 +32,11 @@ public class Passageiro extends Pessoa{
         this.passagem = passagem;
     }
 
+
+    @Override
+    public String toString() {
+        return "Passageiro [identificadorBagagem=" + identificadorBagagem + ", passagem=" + passagem + ", getNome()="
+                + getNome() + ", getRg()=" + getRg() + "]";
+    }
+
 }
