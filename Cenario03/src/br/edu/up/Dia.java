@@ -60,9 +60,5 @@ public class Dia {
     
 
 
-
-
-// reiniciar git
-
     
 }
