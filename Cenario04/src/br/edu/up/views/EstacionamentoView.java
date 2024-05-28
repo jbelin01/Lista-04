@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import br.edu.up.models.Carro;
 
-public class EstacionamentoView {
+public class EstacionamentoView  {
 
     private Carro[] carros = new Carro[10];
     private int vagas = 10;

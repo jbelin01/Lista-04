@@ -1,13 +1,9 @@
 package br.edu.up.models;
 
 public abstract class Pessoa {
-    private String nome;
-    private String rg;
-    private Aeronave aeronave;
-
-
-    public Pessoa() {
-    }
+    protected String nome;
+    protected String rg;
+    protected Aeronave aeronave;
 
     public Pessoa(String nome, String rg) {
         this.nome = nome;

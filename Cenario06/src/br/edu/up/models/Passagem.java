@@ -40,5 +40,10 @@ public class Passagem{
         this.dataVoo = dataVoo;
     }
 
+    @Override
+    public String toString() {
+        return "NumAcento: " + numAcento + ", classe: " + classe + ", dataVoo: " + dataVoo;
+    }
+
     
 }

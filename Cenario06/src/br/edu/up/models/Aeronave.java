@@ -2,7 +2,7 @@ package br.edu.up.models;
 
 public class Aeronave extends Passagem{
 
-    public String[] codigo;
+    public String codigo;
     public String tipo;
     public int quantidadeAssentos;
 
@@ -10,17 +10,17 @@ public class Aeronave extends Passagem{
     public Aeronave() {
     }
 
-    public Aeronave(String[] codigo, String tipo, int quantidadeAssentos) {
+    public Aeronave(String codigo, String tipo, int quantidadeAssentos) {
         this.codigo = codigo;
         this.tipo = tipo;
         this.quantidadeAssentos = quantidadeAssentos;
     }
 
-    public String[] getCodigo() {
+    public String getCodigo() {
         return this.codigo;
     }
 
-    public void setCodigo(String[] codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -43,6 +43,6 @@ public class Aeronave extends Passagem{
 
     @Override
     public String toString() {
-        return "Aeronave [codigo=" + codigo + ", tipo=" + tipo + ", quantidadeAssentos=" + quantidadeAssentos + "]";
+        return "Aeronave -> codigo: " + codigo + ", tipo: " + tipo + ", quantidadeAssentos: " + quantidadeAssentos;
     } 
 }

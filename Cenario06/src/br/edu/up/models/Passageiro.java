@@ -5,10 +5,6 @@ public class Passageiro extends Pessoa{
     public Passagem passagem;
 
 
-    public Passageiro() {
-    }
-
-
     public Passageiro(String nome, String rg, String identificadorBagagem, Passagem passagem) {
         super(nome, rg);
         this.identificadorBagagem = identificadorBagagem;
@@ -35,8 +31,7 @@ public class Passageiro extends Pessoa{
 
     @Override
     public String toString() {
-        return "Passageiro [identificadorBagagem=" + identificadorBagagem + ", passagem=" + passagem + ", getNome()="
-                + getNome() + ", getRg()=" + getRg() + "]";
+        return "Passageiro -> Nome: " + getNome() + ", Rg: " + getRg() + ", identificadorBagagem: " + identificadorBagagem + ", passagem: " + passagem;
     }
 
 }
