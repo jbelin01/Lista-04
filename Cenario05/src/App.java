@@ -1,5 +1,8 @@
+import br.edu.up.views.TelaPrincipal;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        TelaPrincipal principal = new TelaPrincipal();
+        principal.mostrar();
     }
 }
